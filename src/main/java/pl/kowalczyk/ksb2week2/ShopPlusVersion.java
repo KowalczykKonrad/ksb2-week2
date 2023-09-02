@@ -10,8 +10,8 @@ import java.text.DecimalFormat;
 @Profile("PLUS")
 public class ShopPlusVersion extends ShopStartVersion{
 
-    private ProductService productService;
-    private ProfileInfo profileInfo;
+    private final ProductService productService;
+    private final ProfileInfo profileInfo;
 
     @Autowired
     public ShopPlusVersion(ProductService productService, ProfileInfo profileInfo) {

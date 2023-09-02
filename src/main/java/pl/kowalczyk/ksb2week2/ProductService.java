@@ -1,19 +1,17 @@
 package pl.kowalczyk.ksb2week2;
 
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Getter
 @Service
 public class ProductService {
 
-    private List<Product> products;
-
-    public List<Product> getProducts() {
-        return products;
-    }
+    private final List<Product> products;
 
     public ProductService() {
         Random random = new Random();
@@ -27,8 +25,7 @@ public class ProductService {
     }
 
     public double totalAmount() {
-        double totalPrice = products.stream().mapToDouble(Product::getPrice).sum();
-        return totalPrice;
+        return products.stream().mapToDouble(Product::getPrice).sum();
     }
 
     public void addProduct(Product product) {

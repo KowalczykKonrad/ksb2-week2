@@ -8,13 +8,10 @@ import java.text.DecimalFormat;
 @Component
 @Profile("PRO")
 public class ShopProVersion extends ShopPlusVersion{
-
-    private ProductService productService;
-    private ProfileInfo profileInfo;
+    private final ProfileInfo profileInfo;
 
     public ShopProVersion(ProductService productService, ProfileInfo profileInfo) {
         super(productService, profileInfo);
-        this.productService = productService;
         this.profileInfo = profileInfo;
     }
 
@@ -25,6 +22,6 @@ public class ShopProVersion extends ShopPlusVersion{
     }
 
     public double calculateDiscount() {
-        return super.calculateVat() -  super.calculateVat() * profileInfo.getDiscount() / 100;
+        return super.calculateVat() - super.calculateVat() * profileInfo.getDiscount() / 100;
     }
 }

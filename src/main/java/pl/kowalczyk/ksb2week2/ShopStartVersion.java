@@ -13,7 +13,7 @@ import java.util.Scanner;
 @Profile("START")
 public class ShopStartVersion {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     @Autowired
     public ShopStartVersion(ProductService productService) {
